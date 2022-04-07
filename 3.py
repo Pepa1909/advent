@@ -1,5 +1,3 @@
-import pandas as pd
-
 soubor =open("advent\\3.txt" ,encoding="utf-8").read().splitlines()
 N = len(soubor[0])
 gamma = ""
