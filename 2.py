@@ -1,18 +1,12 @@
-import csv
-with open("2.csv", encoding="utf-8") as f:
-    reader = csv.reader(f, delimiter = " ")
-    l_cisla = []
-    l_kam = []
-    vyska = 0
-    dopredu = 0
-    for r in reader:
-        # l_kam.append(r[0])
-        # l_cisla.append(int(r[-1]))
-        if r[0]=="forward":
-            dopredu+= int(r[-1])
-        if r[0]=="up":
-            vyska -= int(r[-1])
-        if r[0] == "down":
-            vyska += int(r[-1])
-    print(dopredu*vyska)
+soubor = open("advent\\2.txt", encoding="utf-8").read().splitlines()
+forward = 0
+depth = 0
+for n in soubor:
+    if n[0] == "f":
+        forward += int(n[-1])
+    elif n[0] == "d":
+        depth += int(n[-1])
+    else:
+        depth -= int(n[-1])
+print(depth*forward)
     
